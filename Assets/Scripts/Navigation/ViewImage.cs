@@ -9,6 +9,7 @@ public class ViewImage : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ReferenceManager.SelectedImage = GetComponent<RawImage>();
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        LoadManager.Instance.LoadSceneAsync("View", LoadSceneMode.Additive);
+        //SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 }
