@@ -30,6 +30,7 @@ public class ContentFiller : MonoBehaviour
                 && _lastItemIndex != -1 
                 && _runningCoroutineCount == 0)
             {
+                // TODO: probably smarter to fetch a screen worth of data each time
                 // Fetch more data
                 StartCoroutine(FetchAnAmountOfData(_columnCount));
                 //Debug.Log($"Should fetch more data, {_scrollRect.verticalNormalizedPosition}");
