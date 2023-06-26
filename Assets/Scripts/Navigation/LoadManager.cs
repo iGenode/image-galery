@@ -53,7 +53,7 @@ public class LoadManager : MonoBehaviour
         while (progress <= 1f);
 
         asyncScene.allowSceneActivation = true;
-        StartCoroutine(WaitToHideLoading(2));
+        StartCoroutine(WaitToHideLoading(1));
     }
 
     private IEnumerator WaitToHideLoading(int seconds)

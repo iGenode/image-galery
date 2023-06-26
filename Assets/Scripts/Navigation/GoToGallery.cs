@@ -8,7 +8,7 @@ public class GoToGallery : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            LoadManager.Instance.LoadSceneAsync("Gallery");
+            NavigationManager.Instance.GoToGallery();
         });
     }
 }

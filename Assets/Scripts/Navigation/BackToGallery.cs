@@ -9,7 +9,7 @@ public class BackToGallery : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(() =>
         {
-            SceneManager.UnloadSceneAsync("View");
+            NavigationManager.Instance.OnBackPress();
         });
     }
 }
