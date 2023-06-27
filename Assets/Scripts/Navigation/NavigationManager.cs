@@ -28,7 +28,11 @@ public class NavigationManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                OnBackPress();
+                // If not loading another scene
+                if (!LoadManager.IsLoading)
+                {
+                    OnBackPress();
+                }
             }
         }
     }

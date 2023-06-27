@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LoadManager : MonoBehaviour
 {
     public static LoadManager Instance;
+    public static bool IsLoading;
 
     [Header("Loading UI")]
     [SerializeField]
@@ -34,6 +35,7 @@ public class LoadManager : MonoBehaviour
 
     public async void LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
     {
+        IsLoading = true;
         var asyncScene = SceneManager.LoadSceneAsync(sceneName, mode);
         asyncScene.allowSceneActivation = false;
 
@@ -59,7 +61,13 @@ public class LoadManager : MonoBehaviour
     private IEnumerator WaitToHideLoading(int seconds)
     {
         yield return new WaitForSeconds(seconds);
+        HideLoading();
+    }
+
+    public void HideLoading()
+    {
         _loadingCanvas.SetActive(false);
         _progressBar.value = 0;
+        IsLoading = false;
     }
 }
